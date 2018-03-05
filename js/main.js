@@ -10,16 +10,16 @@ const content2 = document.getElementById('content2');
 const content3 = document.getElementById('content3');
 
 link1.style.backgroundColor = '#39836a';
-content1.style.opacity = '1';
+content1.style.display = 'grid';
 
 link1.addEventListener('click',function(){
     link1.style.backgroundColor = '#39836a';
     link2.style.backgroundColor = '';
     link3.style.backgroundColor = '';
 
-    content1.style.opacity = '1';
-    content2.style.opacity = '0';
-    content3.style.opacity = '0';
+    content1.style.display = 'grid';
+    content2.style.display = 'none';
+    content3.style.display = 'none';
 });
 
 link2.addEventListener('click',function(){
@@ -27,9 +27,9 @@ link2.addEventListener('click',function(){
     link2.style.backgroundColor = '#9a4880';
     link3.style.backgroundColor = '';
 
-    content1.style.opacity = '0';
-    content2.style.opacity = '1';
-    content3.style.opacity = '0';
+    content1.style.display = 'none';
+    content2.style.display  = 'grid';
+    content3.style.display  = 'none';
 });
 
 link3.addEventListener('click',function(){
@@ -37,7 +37,7 @@ link3.addEventListener('click',function(){
     link2.style.backgroundColor = '';
     link3.style.backgroundColor = '#39836a';
 
-    content1.style.opacity = '0';
-    content2.style.opacity = '0';
-    content3.style.opacity = '1';
+    content1.style.display = 'none';
+    content2.style.display = 'none';
+    content3.style.display = 'grid';
 });
