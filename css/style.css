@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Hack";
+    src: url("Hack-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Hack;
+}
+
+html, body {
+    background-color: #f2c8aa;
+}
+
+.tweet_wrapper {
+    width: 50%;
+    margin: auto;
+    margin-top: 15%;
+    padding: 25px;
+    border: 15px solid white;
+    background-color: #071d22;
+    color: white;
+    box-shadow: 15px 15px 0px 0px #071d22;
+}
+
+.icons {
+    top: 0;
+    position: absolute;
+    right: 0;
+    padding: 15px;
+}
+
+.icons i {
+    font-size: 35px;
+    padding: 5px;
+    color: #071d22;
+}
+
+.icons i:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1600px) {
+    .tweet_wrapper {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .tweet_wrapper {
+        width: 95%;
+    }
+    .icons {
+        display: none;
+    }
+}
