@@ -42,9 +42,20 @@ function init() {
                     tweet_final += tweet_stripped[i].replace(/(\r\n\t|\n|\r\t)/gm,"") + " ";
                 }
             }
-
+            //Create month
+            const month = tweet_stripped[tweet_stripped.length-5];
+            const month_stripped = month.replace(/(\r\n\t|\n|\r\t)/gm,"");
+            const month_final = month.slice(-3);
+            //Create day
+            const day = tweet_stripped[tweet_stripped.length-4];
+            const day_final = day.replace(",","");
+            //Create year 
+            const year_final = tweet_stripped[tweet_stripped.length-3];
+            //Create span with date info
+            const date_final = "<span class='date'>- " + month_final + " " + day_final + " " + year_final + "</span>";
+            //Append tweet and date to target div
             let tweetTarget = document.getElementById("tweet_target");
-            tweetTarget.innerHTML = tweet_final;
+            tweetTarget.innerHTML = tweet_final + " " + date_final;
         }
 
     });
