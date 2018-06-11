@@ -1,4 +1,4 @@
-Simple website that randomly selects one of Dril's*1 tweets.
+Simple website that randomly selects and displays one of Dril's*1 tweets.
 
 All tweets are collected in tweets.json. The JSON data will be updated every once in a while.
 
