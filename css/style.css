@@ -40,6 +40,10 @@ html, body {
     cursor: pointer;
 }
 
+.date {
+    color: #f2c8aa;
+}
+
 @media only screen and (max-width: 1600px) {
     .tweet_wrapper {
         width: 75%;
