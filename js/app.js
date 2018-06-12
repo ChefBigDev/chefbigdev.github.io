@@ -1,16 +1,4 @@
-function getJSON(callback) {   
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'js/tweets.json', true);
-    xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-            }
-    };
-    xobj.send(null);  
-}
-
-function init() {
+function initTweets() {
         this.getJSON(function(response) {
 
         let tweets = JSON.parse(response);
@@ -22,6 +10,7 @@ function init() {
         let tweet_stripped = tweet.split(" ");
 
         //Certain types of tweets dont function as of yet, page will reload until it finds a working tweet.
+        //Will be fixed at some point by not including them in JSON data.
         if(tweet_stripped[0].startsWith("\ndril\n@") || tweet_stripped[0].startsWith("\n\n")){
             location.reload();
         } else {
@@ -61,4 +50,16 @@ function init() {
     });
 }
 
-init();
+function getJSON(callback) {   
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'js/tweets.json', true);
+    xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+            callback(xobj.responseText);
+            }
+    };
+    xobj.send(null);  
+}
+
+initTweets();
