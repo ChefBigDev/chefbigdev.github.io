@@ -3,13 +3,18 @@
     src: url("Hack-Regular.ttf");
 }
 
+:root {
+    --color-peach: #f2c8aa;
+    --dark-blue: #071d22;
+}
+
 * {
     box-sizing: border-box;
     font-family: Hack;
 }
 
 html, body {
-    background-color: #f2c8aa;
+    background-color: var(--color-peach);
 }
 
 .tweet_wrapper {
@@ -18,7 +23,7 @@ html, body {
     margin-top: 15%;
     padding: 25px;
     border: 15px solid white;
-    background-color: #071d22;
+    background-color: var(--dark-blue);
     color: white;
     box-shadow: 15px 15px 0px 0px #071d22;
 }
@@ -33,15 +38,18 @@ html, body {
 .icons i {
     font-size: 35px;
     padding: 5px;
-    color: #071d22;
+    color: var(--dark-blue);
+    transition: .2s;
 }
 
 .icons i:hover {
     cursor: pointer;
+    color: white;
+    transition: .2s;
 }
 
 .date {
-    color: #f2c8aa;
+    color: var(--color-peach);
 }
 
 @media only screen and (max-width: 1600px) {
