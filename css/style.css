@@ -34,6 +34,22 @@ html, body {
     color: var(--dark-blue);
 }
 
+.copyMessage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 20px;
+    color: var(--dark-blue);
+    text-shadow: 2px 2px white;
+    opacity: 0;
+    transition: 1s;
+}
+
+.copyMessage:hover {
+    cursor: default;
+}
+
 .inputContainer {
     display: hidden;
 }

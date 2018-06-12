@@ -99,4 +99,9 @@ function copy() {
     document.execCommand("copy");
     //Remove input
     input.remove();
+
+    const copyMessage = document.getElementById('copyMessage');
+    copyMessage.style.opacity = 1;
+
+    setTimeout(function(){ copyMessage.style.opacity = 0;}, 1000);
 }
