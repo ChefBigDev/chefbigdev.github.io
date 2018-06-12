@@ -17,10 +17,33 @@ html, body {
     background-color: var(--color-peach);
 }
 
-.tweet_wrapper {
+.container {
+    display: flex;
     width: 50%;
     margin: auto;
     margin-top: 15%;
+}
+
+.sidebar {
+    padding: 5px;
+}
+
+.sidebar i {
+    padding: 5px;
+    font-size: 20px;
+    color: var(--dark-blue);
+}
+
+.inputContainer {
+    display: hidden;
+}
+
+.sidebar i:hover {
+    cursor: pointer;
+}
+
+.tweet_wrapper {
+    width: 100%;
     padding: 25px;
     border: 15px solid white;
     background-color: var(--dark-blue);

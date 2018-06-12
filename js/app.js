@@ -19,7 +19,7 @@ function initTweets() {
             tweetUrl = tweets[random_integer].href;
             //Turn tweet into array to work with.
             tweet_stripped = tweet.split(" ");
-        } else{
+        } else {
             valid_tweet = true;
         }
     }
@@ -28,7 +28,7 @@ function initTweets() {
 
     //Loop through tweet, generate finalized tweet string.
     for(let i = 0; i < tweet_stripped.length - 4; i++){
-        //Remove "Dril" from the start of every tweet, add nbsp.
+        //Remove "Dril" from the start of every tweet, add space.
         if(i == 0) {
             tweet_final += tweet_stripped[i].substr(5) + " ";
         }
@@ -36,7 +36,7 @@ function initTweets() {
         else if(i == tweet_stripped.length - 5){
             tweet_final += tweet_stripped[i].substring(0, tweet_stripped[i].length - 3);
         }
-        //Else just append to tweet_final and add nbsp.
+        //Else just append to tweet_final and add space.
         else {
             tweet_final += tweet_stripped[i].replace(/(\r\n\t|\n|\r\t)/gm,"") + " ";
         }
@@ -68,11 +68,35 @@ function getJSON(callback) {
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'js/tweets.json', true);
     xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-            }
+        if (xobj.readyState == 4 && xobj.status == "200") {
+        callback(xobj.responseText);
+        }
     };
-    xobj.send(null);  
+    xobj.send(null);
 }
 
 initTweets();
+
+function reloadTweets() {
+    this.initTweets();
+}
+
+function copy() {
+    tweetContainer = document.getElementById('tweet_target');
+    tweetContent = tweetContainer.innerHTML.replace(/ *\<[^)]*\> */g, "");
+    //Create input with tweet text value
+    const input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('value', tweetContent);
+    input.style.display = 'hidden';
+    input.style.position = 'absolute';
+    input.style.fontSize = '0px';
+    //Append input to input container
+    const inputContainer = document.getElementById('inputContainer');
+    inputContainer.appendChild(input);
+    //Select and copy input value
+    input.select();
+    document.execCommand("copy");
+    //Remove input
+    input.remove();
+}

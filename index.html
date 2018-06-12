@@ -17,8 +17,18 @@
     <a href="https://github.com/ChefBigDev/chefbigdev.github.io" target="_blank"><i class="fab fa-github"></i></a>
 </div>
 
-<div class="tweet_wrapper">
-    <span id="tweet_target"></span>
+<div class="container">
+    <div class="sidebar">
+        <i onclick="reloadTweets()" class="fas fa-sync-alt"></i>
+        <br>
+        <i onclick="copy()" class="far fa-copy"></i>
+    </div>
+
+    <div class="tweet_wrapper">
+        <span id="tweet_target"></span>
+    </div>
+
+    <div id="inputContainer"></div>
 </div>
 
 <script src="js/app.js"></script>
