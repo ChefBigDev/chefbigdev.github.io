@@ -6,6 +6,7 @@ function initTweets() {
         //Get random integer between 0 and amount of tweets available.
         let random_integer = Math.floor(Math.random() * (tweets.length - 0) + 0);
         let tweet = tweets[random_integer].value;
+        const tweetUrl = tweets[random_integer].href;
         //Turn tweet into array to work with.
         let tweet_stripped = tweet.split(" ");
 
@@ -40,11 +41,15 @@ function initTweets() {
             const day_final = day.replace(",","");
             //Create year 
             const year_final = tweet_stripped[tweet_stripped.length-3];
-            //Create span with date info
-            const date_final = "<span class='date'>- " + month_final + " " + day_final + " " + year_final + "</span>";
+            //Create attribute with date info and tweet reference
+            const attr = document.createElement('a');
+            attr.setAttribute('href', tweetUrl);
+            attr.setAttribute('target', '_blank');
+            attr.innerHTML = month_final + " " + day_final + " " + year_final;
             //Append tweet and date to target div
             let tweetTarget = document.getElementById("tweet_target");
-            tweetTarget.innerHTML = tweet_final + " " + date_final;
+            tweetTarget.innerHTML = tweet_final + " ";
+            tweetTarget.appendChild(attr);
         }
 
     });

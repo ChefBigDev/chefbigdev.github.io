@@ -52,6 +52,11 @@ html, body {
     color: var(--color-peach);
 }
 
+a {
+    text-decoration: none;
+    color: var(--color-peach);
+}
+
 @media only screen and (max-width: 1600px) {
     .tweet_wrapper {
         width: 75%;
