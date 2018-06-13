@@ -1,4 +1,6 @@
-function initTweets() {
+initTweet();
+
+function initTweet() {
     this.getJSON(function(response) {
 
     let tweets = JSON.parse(response);
@@ -75,21 +77,19 @@ function getJSON(callback) {
     xobj.send(null);
 }
 
-initTweets();
-
-function reloadTweets() {
-    this.initTweets();
+function reloadTweet() {
+    this.initTweet();
 }
 
-function copy() {
-    tweetContainer = document.getElementById('tweet_target');
-    tweetContent = tweetContainer.innerHTML.replace(/ *\<[^)]*\> */g, "");
+function copyTweet() {
+    tweetTarget = document.getElementById('tweet_target');
+    tweetContent = tweetTarget.innerHTML.replace(/ *\<[^)]*\> */g, "");
+    //Copying requires you to use a text input/textbox
     //Create input with tweet text value
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('value', tweetContent);
     input.style.display = 'hidden';
-    input.style.position = 'absolute';
     input.style.fontSize = '0px';
     //Append input to input container
     const inputContainer = document.getElementById('inputContainer');
@@ -99,9 +99,8 @@ function copy() {
     document.execCommand("copy");
     //Remove input
     input.remove();
-
+    //Copy to clipboard message, disappears after 1 second
     const copyMessage = document.getElementById('copyMessage');
     copyMessage.style.opacity = 1;
-
     setTimeout(function(){ copyMessage.style.opacity = 0;}, 1000);
 }
