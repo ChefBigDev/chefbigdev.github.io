@@ -57,6 +57,7 @@ section {
     font-weight: bolder;
     font-size: 6em;
     letter-spacing: .1rem;
+    transition: .75s;
 }
 
 .primary {
