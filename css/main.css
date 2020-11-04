@@ -47,12 +47,13 @@ section {
     word-spacing: 1em;
 }
 
-.middle .links a {
+.middle a {
     color: var(--color-primary);
     font-size: 1.75em;
     text-decoration: none;
     text-transform: uppercase;
     text-decoration: underline;
+    transition: .5s;
 }
 
 .bottom {
