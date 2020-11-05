@@ -48,6 +48,19 @@ function getRandomRainbowColor() {
     return rainbowColors[random];
 }
 
+document.querySelectorAll('.bottom .name').forEach(e => {
+    e.addEventListener('mouseover', nameHoverAnimation);
+    e.addEventListener('mouseleave', nameHoverAnimation);
+});
+
+function nameHoverAnimation() {
+    if(this.style.marginLeft == '2vw') {
+        this.style.marginLeft = '0';
+    } else {
+        this.style.marginLeft = '2vw';
+    }
+}
+
 document.body.onscroll = () => {
     let st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop){//bottom
@@ -62,7 +75,6 @@ document.body.onscroll = () => {
         currentDirection = 'bottom';
         cube.style.transform = 'translateZ(-100px) rotateY( '+ currentPos +'deg)';
     } else {//top
-
         middleLink.style.marginTop = '-10vh';
         middleLink.style.color = getRandomRainbowColor();
 
