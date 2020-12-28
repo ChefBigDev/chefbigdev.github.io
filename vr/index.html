@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>VR SHIT</title>
+    <meta name="description" content="CINEMA">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+    
+    <!-- Image link template to be reused. -->
+    <script id="link" type="text/html">
+      <a-entity class="link"
+        geometry="primitive: box; width: 0.25; height: 0.25; depth: 0.25"
+        material="src: ${thumb}"
+        animation="property: rotation; from: 0 0 0; to: 360 180 0; dur: 10000; easing: linear; loop: true"
+        event-set__mouseenter="scale: 1.1 1.1 1.1;"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade">
+      </a-entity>
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="bg" crossorigin="anonymous" src="assets/bg.jpg">
+
+        <video id="main" src="assets/shrek.mp4" autoplay></video>
+        <img id="main-thumb" crossorigin="anonymous" src="assets/main_box.jpg">
+        
+        <img id="about" crossorigin="anonymous" src="assets/about.jpg">
+        <img id="about-thumb" crossorigin="anonymous" src="assets/about_box.jpg">
+        
+        <img id="work" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <img id="work-thumb" crossorigin="anonymous" src="assets/work_box.jpg">
+
+        <a-asset-item id="chair" src="assets/chair/scene.gltf"></a-asset-item>
+        <a-asset-item id="table" src="assets/table/scene.gltf"></a-asset-item>
+        <a-asset-item id="char" src="assets/char/scene.gltf"></a-asset-item>
+        <a-asset-item id="gun" src="assets/gun/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky radius="10" src="#bg" animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade" animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade" rotation="0 -90 0"></a-sky>
+
+      <a-video id="image-360" src="assets/default.jpg" height="3" width="4" position="0 0 -3"></a-video>
+      <a-entity gltf-model="#chair" position="0 -0.45 0" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#table" position="0 -0.45 -0.75" scale="0.3 0.3 0.3" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#char" position="0.10 -0.35 -0.75" scale="0.001 0.001 0.001"></a-entity>
+      <a-entity gltf-model="#gun" position="-0.15 -0.33 -0.65" rotation="90 195 0" scale="0.01 0.01 0.01"></a-entity>
+
+      <a-entity id="links" layout="margin: 0.5; columns: 2" position="-0.25 1.25 -2">
+        <a-entity template="src: #link" data-src="#main" data-thumb="#main-thumb">
+          <a-entity class="link"></a-entity>
+        </a-entity>
+
+        <a-entity template="src: #link" data-src="#about" data-thumb="#about-thumb">
+          <a-entity class="link"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls position="0 0 0">
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: springgreen"
+          event-set__mouseleave="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
