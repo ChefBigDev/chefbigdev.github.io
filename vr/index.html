@@ -29,7 +29,7 @@
         <!-- Images -->
         <img id="bg" crossorigin="anonymous" src="assets/bg.jpg">
         <img id="one" crossorigin="anonymous" src="assets/cat1.jpg">
-        <img id="two" crossorigin="anonymous" src="assets/cat2.jpg">
+        <video id="two" crossorigin="anonymous" src="assets/video2.mp4"></video>
         <!-- 3D Models -->
         <a-asset-item id="chair" src="assets/chair/scene.gltf"></a-asset-item>
         <a-asset-item id="table" src="assets/table/scene.gltf"></a-asset-item>
@@ -50,7 +50,7 @@
       <a-entity geometry="primitive: plane; width: 3; height: auto" text="value: Hover over cube to select:;" color="white" position="0 2.15 -3"></a-entity>
 
       <!-- Image/video display screen and 3D scene models -->
-      <a-plane id="image-360" src="assets/default.jpg" height="3" width="4" position="0 0 -3" autoplay="true"></a-plane>
+      <a-video id="image-360" src="assets/default.jpg" height="3" width="4" position="0 0 -3"></a-video>
       <a-entity gltf-model="#chair" position="0 -0.45 0" rotation="0 90 0"></a-entity>
       <a-entity gltf-model="#table" position="0 -0.45 -0.75" scale="0.3 0.3 0.3" rotation="0 90 0"></a-entity>
       <a-entity gltf-model="#char" position="0.10 -0.35 -0.75" scale="0.001 0.001 0.001"></a-entity>
@@ -67,7 +67,7 @@
           <a-entity class="link"></a-entity>
         </a-entity>
 
-        <a-entity template="src: #link" data-src="#two" data-thumb="#two">
+        <a-entity id="test" template="src: #link" data-src="#two" data-thumb="#two">
           <a-entity class="link"></a-entity>
         </a-entity>
       </a-entity>
@@ -83,5 +83,18 @@
           raycaster="objects: .link"></a-cursor>
       </a-entity>
     </a-scene>
+
+    <script>
+
+      function playVideo () {
+        setTimeout(function(){ 
+          var els = document.querySelector('#image-360')
+          console.log(els)
+          els.components.material.material.map.image.play()
+         }, 1000);
+      }
+
+      document.querySelector('#test').addEventListener('click', playVideo)
+    </script>
   </body>
 </html>
