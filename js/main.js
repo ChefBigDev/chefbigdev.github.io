@@ -7,11 +7,15 @@ let currentDirection;
 
 const nameDivs = document.querySelectorAll('.name');
 const rainbowColors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#2E2B5F', '#8B00FF'];
-//const middleLink = document.getElementById('middleLink');
 let currentColor = 0;
 
 const modeSwitchInput = document.querySelector('.modeSwitchInput');
 const modeSwitchLabel = document.querySelector('.modeSwitchLabel');
+
+//Set colors globally
+const color_dark = '#171827';
+const color_light = '#F1F1F1';
+const color_white = '#FFFFFF';
 
 modeHandler(modeSwitchInput);
 modeSwitchInput.addEventListener('click', modeHandler);
@@ -20,25 +24,34 @@ function modeHandler(e) {
     if(this.checked || e.checked) {//Dark mode enabled
         //Switch styling
         modeSwitchLabel.innerHTML = 'LIGHT';
-        modeSwitchLabel.style.color = 'white';
+        modeSwitchLabel.style.color = color_white;
         //Element styling
-        document.querySelector('.bottom').style.background = '#171827';
-        document.querySelector('.primary').style.color = 'white';
-        document.body.style.background = '#171827';
+        document.querySelector('.bottom').style.background = color_dark;
+        document.querySelector('.primary').style.color = color_white;
+        document.body.style.background = color_dark;
+        //Color of text blocks in the bottom section
+        document.querySelectorAll('.block').forEach(block => {
+            block.style.color = '';
+        });
 
-        particles.background.color = '#171827';
-        particles.particles.color = '#FFFFFF';
+        //Enable particles in dark mode
+        particles.background.color = color_dark;
+        particles.particles.color = color_white;
         tsParticles.load('tsparticles', particles);
     } else {//Dark mode disabled
         //Switching styling
         modeSwitchLabel.innerHTML = 'DARK';
-        modeSwitchLabel.style.color = '#171827';
+        modeSwitchLabel.style.color = color_dark;
         //Element styling
         document.querySelector('.primary').style.color = '';
         document.querySelector('.bottom').style.background = '';
-        
-        document.body.style.background = '#f1f1f1';
-
+        document.body.style.background = color_light;
+        //Color of text blocks in the bottom section
+        document.querySelectorAll('.block').forEach(block => {
+            block.style.color = 'black';
+        });
+    
+        //Clear particles in light mode
         document.getElementById('tsparticles').innerHTML = '';
     }
 }
@@ -69,7 +82,6 @@ function resetAnimation() {
     cube.style.transform = 'translateZ(-100px) rotateY(0deg)';
     currentDirection = '';
     currentPos = 0;
-    //middleLink.style.marginTop = '0px';
 }
 
 // set initial side
@@ -97,10 +109,6 @@ function nameHoverAnimation() {
 document.body.onscroll = () => {
     let st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop){//bottom
-
-        // middleLink.style.marginTop = '10vh';
-        //middleLink.style.color = getRandomRainbowColor();
-
         if(currentDirection == 'top') {
             currentPos = currentPos - 2;
         }
@@ -108,9 +116,6 @@ document.body.onscroll = () => {
         currentDirection = 'bottom';
         cube.style.transform = 'translateZ(-100px) rotateY( '+ currentPos +'deg)';
     } else {//top
-        //middleLink.style.marginTop = '-10vh';
-        //middleLink.style.color = getRandomRainbowColor();
-
         if(currentDirection == 'bottom') {
             currentPos = currentPos + 2;
         }
