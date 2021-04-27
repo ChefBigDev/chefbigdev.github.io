@@ -3,15 +3,20 @@
     --color-primary: #373b41;
 }
 
+@font-face {
+    src: url('../sfpro.ttf');
+    font-family: 'sf';
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    font-family: 'Arial';
 }
 
 body {
     margin: 0;
-    background: white;
+    background: #f1f1f1;
 }
 
 section {
@@ -31,7 +36,7 @@ section {
 }
 
 .middle {
-    background-color: #f2f2f2;
+    background-color: #f1f1f1;
     height: 25vh;
 }
 
@@ -49,7 +54,29 @@ section {
 }
 
 .bottom {
-    height: 75vh;
+    height: 100vh;
+    background: white;
+    font-family: 'sf';
+    font-size: 1.25em;
+}
+
+.bottom .block {
+    background: #f1f1f1;
+    width: 75vw;
+    margin: 10px;
+    padding: 50px;
+}
+
+.bottom .block h1 {
+    margin-bottom: 15px;
+}
+
+.bottom .block ul {
+    list-style: none;
+}
+
+.bottom .block ul li {
+    padding: 5px 0 5px 0;
 }
 
 .name {
@@ -76,11 +103,6 @@ section {
     width: 25%;
     position: absolute;
     font-weight: bold;
-}
-
-.bottom {
-    z-index: 5;
-    position: absolute;
 }
 
 #tsparticles {
@@ -130,9 +152,27 @@ section {
     background: #FFE5B5;
 }
 
+.test {
+    width: 24px;
+    height: 24px;
+    z-index: -5;
+    border-radius: 50%;
+    background: #171827;
+    position: absolute;
+    right: 66px;
+    top: 20px;
+    visibility: hidden;
+}
+
+.modeSwitchInput:checked ~ .test {
+    visibility: visible;
+    transition: .2s ease;
+}
+
 .modeSwitchInput:after {
     content: '';
     position: absolute;
+    z-index: -5;
     top: 2px;
     left: 2px;
     width: 24px;
