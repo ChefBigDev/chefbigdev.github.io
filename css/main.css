@@ -48,6 +48,7 @@ section {
     width: 75vw;
     margin: 10px;
     padding: 50px;
+    line-height: 1.1;
 }
 
 .bottom .block h1 {
@@ -58,9 +59,9 @@ section {
     list-style: none;
 }
 
-.bottom .block ul li {
+/* .bottom .block ul li {
     padding: 5px 0 5px 0;
-}
+} */
 
 .bottom .block ul li .embed {
     color: lightblue;
@@ -250,7 +251,7 @@ CUBE
     }
 
     .bottom .block {
-        padding: 10px;
+        padding: 5px;
         border: none;
     }
 }
