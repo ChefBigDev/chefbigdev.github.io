@@ -102,7 +102,7 @@ document.body.onscroll = () => {
     let st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop){//bottom
 
-        middleLink.style.marginTop = '10vh';
+        // middleLink.style.marginTop = '10vh';
         middleLink.style.color = getRandomRainbowColor();
 
         if(currentDirection == 'top') {
@@ -112,7 +112,7 @@ document.body.onscroll = () => {
         currentDirection = 'bottom';
         cube.style.transform = 'translateZ(-100px) rotateY( '+ currentPos +'deg)';
     } else {//top
-        middleLink.style.marginTop = '-10vh';
+        //middleLink.style.marginTop = '-10vh';
         middleLink.style.color = getRandomRainbowColor();
 
         if(currentDirection == 'bottom') {
