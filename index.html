@@ -9,12 +9,14 @@
 </head>
 <body>
     <div class="modeSwitchWrapper">
-        <input type="checkbox" class="modeSwitchInput" checked><span class="moon_circle"></span><span class="modeSwitchLabel">LIGHT</span>
+        <input type="checkbox" class="modeSwitchInput" checked>
+        <span class="moon_circle"></span>
+        <span class="modeSwitchLabel">LIGHT</span>
     </div>
     <section class="top">
         <div id="tsparticles"></div>
-    <div class="cubes">
-            <div class="scene" data-rellax-speed="10">
+        <div class="cubes">
+            <div class="scene">
                 <div class="cube">
                     <div class="cube__face cube__face--front">
                         <span class="name">HELLO</span>
@@ -43,45 +45,46 @@
                 </div>
             </div>
         </div>
-        <span class="name primary rellax" data-rellax-speed="10">SCROLL DOWN</span>
+        <span class="name primary">SCROLL DOWN</span>
     </section>
 
     <section class="bottom">
-        <div class="block">
-            <h1>About</h1>
-            <ul>
-                <li>I'm a computer science student and remote web developer.</li>
-                <li>This website uses minimal resources. Apart from a library for generating particles it's pure CSS and JavaScript.</li>
-                <li>No tracking, no BS. Just a website.</li>
-            </ul>
-        </div>
-        <div class="block">
-            <h1>Interests</h1>
-            <ul>
-                <li>Technology</li>
-                <li>Economics</li>
-                <li>Literature</li>
-                <li>Traveling</li>
-            </ul>
-        </div>
-        <div class="block">
-            <h1>Hardware</h1>
-            <ul>
-                <li>M1 Macbook Pro</li>
-            </ul>
-        </div>
-        <div class="block">
-            <h1>Contact me</h1>
-            <ul>
-                <li>GitHub: <span class="embed"><a href="https://github.com/jvanhouts" target="_blank">github</a></span></li>
-                <li>Discord: <span class="embed">gun#0101</span></li>
-                <li>Email: <span class="embed">contact@jvanhouts.com</span></li>
-            </ul>    
+        <div class="blockWrapper">
+            <div class="block">
+                <h1>About</h1>
+                <ul>
+                    <li>I'm a computer science student and remote web developer.</li>
+                    <li>This website uses minimal resources. Apart from a library for generating particles it's pure CSS and JavaScript.</li>
+                    <li>No tracking, no BS. Just a website.</li>
+                </ul>
+            </div>
+            <div class="block">
+                <h1>Interests</h1>
+                <ul>
+                    <li>Technology</li>
+                    <li>Economics</li>
+                    <li>Literature</li>
+                    <li>Traveling</li>
+                </ul>
+            </div>
+            <div class="block">
+                <h1>Hardware</h1>
+                <ul>
+                    <li>M1 Macbook Pro</li>
+                </ul>
+            </div>
+            <div class="block">
+                <h1>Contact me</h1>
+                <ul>
+                    <li>GitHub: <span class="embed"><a href="https://github.com/jvanhouts" target="_blank">github</a></span></li>
+                    <li>Discord: <span class="embed">gun#0101</span></li>
+                    <li>Email: <span class="embed">contact@jvanhouts.com</span></li>
+                </ul>    
+            </div>
         </div>
     </section>
 
     <script src="js/tsparticles.min.js"></script>
-    <script src="js/rellax.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
