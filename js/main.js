@@ -33,7 +33,6 @@ function modeHandler(e) {
         document.querySelectorAll('.block').forEach(block => {
             block.style.color = '';
         });
-
         //Enable particles in dark mode
         particles.background.color = color_dark;
         particles.particles.color = color_white;
@@ -50,7 +49,6 @@ function modeHandler(e) {
         document.querySelectorAll('.block').forEach(block => {
             block.style.color = 'black';
         });
-    
         //Clear particles in light mode
         document.getElementById('tsparticles').innerHTML = '';
     }
@@ -91,19 +89,6 @@ function getRandomRainbowColor() {
     const random = Math.floor(Math.random() * rainbowColors.length);
 
     return rainbowColors[random];
-}
-
-document.querySelectorAll('.bottom .name').forEach(e => {
-    e.addEventListener('mouseover', nameHoverAnimation);
-    e.addEventListener('mouseleave', nameHoverAnimation);
-});
-
-function nameHoverAnimation() {
-    if(this.style.marginLeft == '2vw') {
-        this.style.marginLeft = '0';
-    } else {
-        this.style.marginLeft = '2vw';
-    }
 }
 
 document.body.onscroll = () => {
