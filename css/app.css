@@ -17,7 +17,7 @@ body {
   margin: 0;
 }
 
-#sParticles {
+#sparticles {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -441,5 +441,9 @@ CUBE
     border: none;
     width: 100%;
     margin: 25px;
+  }
+
+  #sparticles {
+    display: none;
   }
 }/*# sourceMappingURL=app.css.map */

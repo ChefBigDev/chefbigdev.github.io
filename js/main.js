@@ -4,7 +4,7 @@ let currentPos = 0;
 let currentDirection;
 
 const nameDivs = document.querySelectorAll('.name');
-const canvas_div = document.getElementById('sParticles');
+const canvas_div = document.getElementById('sparticles');
 const rainbowColors = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#2E2B5F', '#8B00FF'];
 let currentColor = 0;
 
