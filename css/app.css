@@ -15,7 +15,13 @@
 
 body {
   margin: 0;
-  background: var(--color-light);
+}
+
+#sParticles {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  visibility: hidden;
 }
 
 section {
@@ -35,12 +41,13 @@ section {
 }
 
 .bottom {
-  height: 150vh;
+  height: auto;
   background: white;
   font-family: "sf";
   font-size: 1.25em;
 }
 .bottom .blockWrapper {
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
@@ -188,6 +195,7 @@ section {
   align-items: center;
   justify-content: center;
   transition: 0.25s;
+  color: #45298d;
 }
 .contact .contact_tile img {
   width: 50px;
@@ -416,6 +424,13 @@ CUBE
     overflow-x: hidden;
   }
 
+  .cubes {
+    max-width: 100%;
+  }
+  .cubes .scene {
+    margin: auto;
+  }
+
   .scene {
     margin: auto;
   }
@@ -435,9 +450,6 @@ CUBE
     background: #171827;
   }
 
-  .bottom {
-    height: 200vh;
-  }
   .bottom .block {
     border: none;
     width: 100%;
