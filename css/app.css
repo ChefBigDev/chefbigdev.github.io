@@ -3,10 +3,6 @@
   --color-light: #f3f3f3;
 }
 
-@font-face {
-  src: url("../sfpro.ttf");
-  font-family: "sf";
-}
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +39,6 @@ section {
 .bottom {
   height: auto;
   background: white;
-  font-family: "sf";
   font-size: 1.25em;
 }
 .bottom .blockWrapper {
@@ -52,20 +47,20 @@ section {
   flex-wrap: wrap;
   width: 80%;
 }
-.bottom .block {
+.bottom .blockWrapper .block {
   box-sizing: border-box;
   height: 250px;
   width: calc(50% - 50px);
   display: inline-block;
   line-height: 1.1;
   margin: 25px;
-  background: white;
+  background: #ffffff;
   color: black;
   position: relative;
   transform: skewY(-5deg);
   box-shadow: 1px 1px 5px #f1f1f1;
 }
-.bottom .block .btn {
+.bottom .blockWrapper .block .btn {
   position: absolute;
   background: white;
   display: inline-block;
@@ -78,7 +73,7 @@ section {
   color: inherit;
   z-index: 2;
 }
-.bottom .block .btn:before {
+.bottom .blockWrapper .block .btn:before {
   content: "";
   position: absolute;
   top: -5px;
@@ -89,7 +84,7 @@ section {
   transform-origin: bottom;
   transform: skewX(45deg);
 }
-.bottom .block .btn:after {
+.bottom .blockWrapper .block .btn:after {
   content: "";
   position: absolute;
   top: -5px;
@@ -100,7 +95,7 @@ section {
   transform-origin: left;
   transform: skewY(45deg);
 }
-.bottom .block:before {
+.bottom .blockWrapper .block:before {
   content: "";
   position: absolute;
   top: -15px;
@@ -111,7 +106,7 @@ section {
   transform-origin: bottom;
   transform: skewX(45deg);
 }
-.bottom .block:after {
+.bottom .blockWrapper .block:after {
   content: "";
   position: absolute;
   top: -15px;
@@ -123,7 +118,7 @@ section {
   transform: skewY(45deg);
   border-bottom: 125px solid #f1f1f1;
 }
-.bottom .block h1 {
+.bottom .blockWrapper .block h1 {
   box-sizing: border-box;
   margin-bottom: 15px;
   padding: 15px;
@@ -134,7 +129,7 @@ section {
   position: relative;
   z-index: 2;
 }
-.bottom .block h1 span {
+.bottom .blockWrapper .block h1 span {
   width: 150px;
   height: 10px;
   background: white;
@@ -143,7 +138,7 @@ section {
   top: 45px;
   z-index: -2;
 }
-.bottom .block h1 span:before {
+.bottom .blockWrapper .block h1 span:before {
   content: "";
   position: absolute;
   top: -10px;
@@ -154,7 +149,7 @@ section {
   transform-origin: bottom;
   transform: skewX(45deg);
 }
-.bottom .block h1 span:after {
+.bottom .blockWrapper .block h1 span:after {
   content: "";
   position: absolute;
   top: -10px;
@@ -165,14 +160,14 @@ section {
   transform-origin: left;
   transform: skewY(45deg);
 }
-.bottom .block ul {
+.bottom .blockWrapper .block ul {
   list-style: none;
   padding: 10px;
 }
-.bottom .block ul li .embed {
+.bottom .blockWrapper .block ul li .embed {
   color: lightblue;
 }
-.bottom .block ul li .embed a {
+.bottom .blockWrapper .block ul li .embed a {
   color: inherit;
 }
 
@@ -355,64 +350,30 @@ CUBE
   color: white;
   text-align: center;
 }
-.cubes .scene .cube .cube__face--front {
+.cubes .scene .cube .cube__face.cube__face--front {
   background: rgba(255, 0, 0, 0);
-}
-.cubes .scene .cube .cube__face--right {
-  background: rgba(255, 255, 0, 0);
-}
-.cubes .scene .cube .cube__face--back {
-  background: rgba(0, 255, 0, 0);
-}
-.cubes .scene .cube .cube__face--left {
-  background: rgba(0, 255, 255, 0);
-}
-.cubes .scene .cube .cube__face--top {
-  background: rgba(0, 0, 255, 0);
-}
-.cubes .scene .cube .cube__face--bottom {
-  background: rgba(255, 0, 255, 0);
-}
-.cubes .scene .cube .cube__face--front {
   transform: rotateY(0deg) translateZ(150px);
 }
-.cubes .scene .cube .cube__face--right {
+.cubes .scene .cube .cube__face.cube__face--right {
+  background: rgba(255, 255, 0, 0);
   transform: rotateY(90deg) translateZ(150px);
 }
-.cubes .scene .cube .cube__face--back {
+.cubes .scene .cube .cube__face.cube__face--back {
+  background: rgba(0, 255, 0, 0);
   transform: rotateY(180deg) translateZ(150px);
 }
-.cubes .scene .cube .cube__face--left {
+.cubes .scene .cube .cube__face.cube__face--left {
+  background: rgba(0, 255, 255, 0);
   transform: rotateY(-90deg) translateZ(150px);
-}
-.cubes .scene .cube .cube__face--top {
-  transform: rotateX(90deg) translateZ(150px);
-}
-.cubes .scene .cube .cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(150px);
-}
-.cubes .scene .cube .cube.show-front {
-  transform: translateZ(-100px) rotateY(0deg);
-}
-.cubes .scene .cube .cube.show-right {
-  transform: translateZ(-100px) rotateY(-90deg);
-}
-.cubes .scene .cube .cube.show-back {
-  transform: translateZ(-100px) rotateY(-180deg);
-}
-.cubes .scene .cube .cube.show-left {
-  transform: translateZ(-100px) rotateY(90deg);
-}
-.cubes .scene .cube .cube.show-top {
-  transform: translateZ(-100px) rotateX(-90deg);
-}
-.cubes .scene .cube .cube.show-bottom {
-  transform: translateZ(-100px) rotateX(90deg);
 }
 
 @media only screen and (max-width: 600px) {
   html {
     overflow-x: hidden;
+  }
+
+  .modeSwitchLabel {
+    color: white !important;
   }
 
   .cubes {
@@ -437,7 +398,7 @@ CUBE
     background: #171827;
   }
 
-  .bottom .block {
+  .bottom .blockWrapper .block {
     border: none;
     width: 100%;
     margin: 25px;
