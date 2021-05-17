@@ -204,10 +204,6 @@ section {
   left: calc(10% + 115px);
   z-index: -1;
 }
-.contact .contact_tile.three {
-  left: calc(10% + 215px);
-  z-index: -2;
-}
 .contact .contact_tile:before {
   content: "";
   position: absolute;
@@ -398,6 +394,9 @@ CUBE
     background: #171827;
   }
 
+  .bottom .blockWrapper {
+    width: 100%;
+  }
   .bottom .blockWrapper .block {
     border: none;
     width: 100%;
