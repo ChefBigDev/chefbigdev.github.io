@@ -4,83 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="stylesheet" href="css/app.css">
     <title>HI</title>
 </head>
 <body>
-    <div class="modeSwitchWrapper">
-        <input type="checkbox" class="modeSwitchInput">
-        <span class="moon_circle"></span>
-        <span class="modeSwitchLabel">LIGHT</span>
-    </div>
-    <section class="top">
-        <canvas id="sparticles"></canvas>
-        <div class="cubes">
-            <div class="scene">
-                <div class="cube">
-                    <div class="cube__face cube__face--front">
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                    </div>
-                    <div class="cube__face cube__face--back">
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                    </div>
-                    <div class="cube__face cube__face--right">
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                    </div>
-                    <div class="cube__face cube__face--left">
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
-                        <span class="name">HELLO</span>
+    <div class="wrapper">
+        <div class="modeSwitchWrapper">
+            <input type="checkbox" class="modeSwitchInput">
+            <span class="moon_circle"></span>
+            <span class="modeSwitchLabel">LIGHT</span>
+        </div>
+        <div class="content">
+            <section class="top">
+                <canvas id="sparticles"></canvas>
+                <div class="cubes">
+                    <div class="scene">
+                        <div class="cube">
+                            <div class="cube__face cube__face--front">
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                            </div>
+                            <div class="cube__face cube__face--back">
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                            </div>
+                            <div class="cube__face cube__face--right">
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                            </div>
+                            <div class="cube__face cube__face--left">
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                                <span class="name">HELLO</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <span class="name primary">SCROLL DOWN</span>
-    </section>
+                <span class="name primary">SCROLL DOWN</span>
+            </section>
 
-    <section class="bottom">
-        <div class="blockWrapper">
-            <div class="block">
-                <h1>About</h1>
-                <a href="#" class="btn">More</a>
-                <ul>
-                    <li>I'm a computer science student and remote web developer.</li>
-                </ul>
-            </div>
-            <div class="block">
-                <h1>Interests</h1>
-                <ul>
-                    <li>Technology</li>
-                    <li>Economics</li>
-                    <li>Literature</li>
-                    <li>Traveling</li>
-                </ul>
-            </div>
-            <div class="block">
-                <h1>Hardware <span></span></h1>
-                <ul>
-                    <li>M1 Macbook Pro</li>
-                </ul>
-            </div>
+            <section class="bottom">
+                <div class="left">
+                    <div class="text">
+                        <div class="img_left"></div>
+                        <h1>Software Engineer</h1>
+                        <h1>Full stack web dev</h1>
+                        <h1>More text</h1>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <h1>About me</h1>
+                        <a href="#">Contact me</a>
+                    </div>
+                </div>
+                </div>
+            </section>
         </div>
+    </div>
 
-        <div class="contact">
-            <a href="#" class="contact_tile one">discord</a>
-            <a href="#" class="contact_tile two">github</a>
-        </div>
-    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha512-dLxUelApnYxpLt6K2iomGngnHO83iUvZytA3YjDUCjT0HDOHKXnVYdf3hU4JjM8uEhxf9nD1/ey98U3t2vZ0qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/hover.js"></script>
 
-    <script src="js/sparticles.min.js"></script>
-    <script src="js/main.min.js"></script>
+    <script>
+        var myAnimation = new hoverEffect({
+            parent: document.querySelector('.img_left'),
+            intensity: .3,
+            image1: 'img/img1.png',
+            image2: 'img/img2.png',
+            displacementImage: 'img/transition.jpg'
+        });
+
+        var myAnimation2 = new hoverEffect({
+            parent: document.querySelector('.img_right'),
+            intensity: .3,
+            image1: 'img/img1x.jpg',
+            image2: 'img/img2x.jpg',
+            displacementImage: 'img/10.jpg'
+        });
+
+        let img = document.querySelector('.img_left');
+
+        let cursor = {
+            x: 0,
+            y: 0
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.x = -e.clientX * .05;
+            cursor.y = -e.clientY * .05;
+
+            img.style.transform = `translate(${cursor.x}px, ${cursor.y}px)`;
+        });
+    </script>
+
+    <script src="js/sparticles.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
