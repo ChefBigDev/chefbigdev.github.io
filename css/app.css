@@ -249,6 +249,24 @@ CUBE
   transform: rotateY(-90deg) translateZ(150px);
 }
 
+@media only screen and (max-width: 2000px) {
+  .bottom .left .text h1 {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .bottom .left .text h1 {
+    font-size: 3rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+  }
+
+  .bottom .left, .bottom .right {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 600px) {
   html {
     overflow-x: hidden;
