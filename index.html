@@ -10,92 +10,64 @@
 <body>
     <div class="wrapper">
         <div class="modeSwitchWrapper">
-            <input type="checkbox" class="modeSwitchInput">
-            <span class="moon_circle"></span>
-            <span class="modeSwitchLabel">LIGHT</span>
+            <div class="inputs">
+                <input type="checkbox" class="modeSwitchInput">
+                <span class="moon_circle"></span>
+                <span class="modeSwitchLabel">LIGHT</span>
+            </div>
+
+            <div class="links">
+                <a href="#cases">Cases</a>
+                <a class="github" href="https://github.com/jvanhouts" target="_blank">Github</a>
+            </div>
         </div>
-        <div class="content">
+        
             <section class="top">
                 <canvas id="sparticles"></canvas>
-                <div class="cubes">
-                    <div class="scene">
-                        <div class="cube">
-                            <div class="cube__face cube__face--front">
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                            </div>
-                            <div class="cube__face cube__face--back">
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                            </div>
-                            <div class="cube__face cube__face--right">
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                            </div>
-                            <div class="cube__face cube__face--left">
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                                <span class="name">HELLO</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="name primary">SCROLL DOWN</span>
-            </section>
-
-            <section class="bottom">
                 <div class="left">
                     <div class="text">
                         <div class="img_left"></div>
-                        <h1>Software Engineer</h1>
-                        <h1>Full stack web dev</h1>
-                        <h1>More text</h1>
+                        <h1>Software engineer</h1>
+                        <h1>Web developer</h1>
+                    </div>
+                </div>
+                <div class="img_right">
+                </div>
+            </section>
+            <section class="bottom" id="cases">
+                <div class="left">
+                    <div class="card_container">
+                        <div class="card">
+                            <h3>Administrative Automation</h3>
+                            <p>A set of tools to automate and improve the
+                                back-end administrative process of a web store
+                                built on the Magento 2 e-commerce platform.</p>
+
+                                <a href="#">Read more</a>
+                        </div>
+                        <div class="card">
+                            <h3>Berlin Internship</h3>
+                            <p>I spent a semester in Berlin to do my internship 
+                                there. I worked on a Magento 1 > 2 platform
+                                migration, including data transfers and the
+                                redesigning of the front-end of our web store.</p>
+
+                                <a href="#">Read more</a>
+                        </div>
+                        <div class="card">
+                            <h3>Digital Library</h3>
+                            <p>During my graduation internship my project
+                                concluded creating the MVP for a digital library
+                                containing a big collection of old newspapers.
+                                I’ve researched text recognition tools and created
+                                the MVP product using Drupal 8.</p>
+
+                                <a href="#">Read more</a>
+                        </div>
                     </div>
                 </div>
                 <div class="right">
-                    <div class="content">
-                        <div class="card">
-                            <div class="date">2020/02 - now</div>
-                            <h3>Steel Vintage Bikes GmbH</h3>
-                            <div class="details">
-                                <p>Type: <span>Remote work</span></p>
-                                <p>Role: <span>Full-stack web dev</span></p>
-                            </div>
-
-                            <a href="#" class="button">Show case</a>
-                        </div>
-
-                        <div class="card">
-                            <div class="date">2021/02 - 2021/07</div>
-                            <h3>React Online </h3>
-
-                            <div class="details">
-                                <p>Type: <span>Internship</span></p>
-                                <p>Role: <span>Front and backend web dev</span></p>
-                            </div>
-
-                            <a href="#" class="button">Show case</a>
-                        </div>
-
-                        <div class="card">
-                            <div class="date">2019/09 - 2020/02</div>
-                            <h3>Steel Vintage Bikes GmbH</h3>
-                            <div class="details">
-                                <p>Type: <span>Internship</span></p>
-                                <p>Role: <span>Full-stack web dev</span></p>
-                            </div>
-
-                            <a href="#" class="button">Show case</a>
-                        </div>
-                    </div>
-                </div>
+                    <h1>Cases</h1>
                 </div>
             </section>
         </div>
@@ -108,10 +80,18 @@
     <script>
         var myAnimation = new hoverEffect({
             parent: document.querySelector('.img_left'),
-            intensity: .3,
+            intensity: .5,
             image1: 'img/img1.png',
             image2: 'img/img2.png',
-            displacementImage: 'img/transition.jpg'
+            displacementImage: 'img/10.jpg'
+        });
+
+        var myAnimation2 = new hoverEffect({
+            parent: document.querySelector('.img_right'),
+            intensity: .5,
+            image1: 'img/main.jpg',
+            image2: 'img/secondary.jpg',
+            displacementImage: 'img/10.jpg'
         });
 
         let img = document.querySelector('.img_left');
